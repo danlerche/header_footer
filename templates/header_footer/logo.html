@@ -1,0 +1,7 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% for logos in logo %}
+
+<a href="/">{% image logos.logo_image class="img-fluid" original %}</a>
+
+{% endfor %}

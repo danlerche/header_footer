@@ -1,0 +1,33 @@
+{% load wagtailcore_tags %}
+
+{% for green_alert in green_alerts %}
+<div class="alert-green">
+<div class="container">
+<div class="alert-item-green collapse show row">
+<div class="alert-date col-2 mt-2">{{ green_alert.alert_date|date:"M d, Y" }}</div>
+<div class="alert-text col-8 mt-2">{{ green_alert.alert_text | richtext }}</div>
+{% if forloop.first %}
+<div class="alert-on-off col-2" class="collapse alert-item-green show">
+<button type="button" class="close mt-3" data-toggle="collapse" data-target=".alert-item-green" aria-expanded="false" aria-controls="alert-item-green">&times;</button>
+</div>
+{% endif %}
+</div>
+</div>
+</div>
+{% endfor %}
+
+{% for red_alert in red_alerts %}
+<div class="alert-red">
+<div class="container">
+<div class="alert-item-red collapse show row">
+<div class="alert-date col-2 mt-2">{{ red_alert.alert_date|date:"M d, Y" }}</div>
+<div class="alert-text col-8 mt-2">{{ red_alert.alert_text | richtext }}</div>
+{% if forloop.first %}
+<div class="alert-on-off col-2" class="collapse alert-item-red show">
+<button type="button" class="close mt-3" data-toggle="collapse" data-target=".alert-item-red" aria-expanded="false" aria-controls="alert-item-red">&times;</button>
+</div>
+{% endif %}
+</div>
+</div>
+</div>
+{% endfor %}

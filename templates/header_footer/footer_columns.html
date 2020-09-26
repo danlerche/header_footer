@@ -1,0 +1,11 @@
+{% load wagtailcore_tags %}
+
+{% for footer in footer_column %}
+<h3>{{ footer.footer_col_heading }}</h3>
+    {{ footer.footer_col }}
+{% endfor %}
+
+{% for footer in footer_column_two %}
+<h3>{{ footer.footer_col_two_heading }}</h3>
+    {{ footer.footer_col_two }}
+{% endfor %}
